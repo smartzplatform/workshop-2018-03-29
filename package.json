@@ -1,0 +1,23 @@
+{
+  "name": "workshop02_stream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartzplatform/smartz-workshop-2018-03-27.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smartzplatform/smartz-workshop-2018-03-27/issues"
+  },
+  "homepage": "https://github.com/smartzplatform/smartz-workshop-2018-03-27#readme",
+  "dependencies": {
+    "truffle": "^4.1.3",
+    "zeppelin-solidity": "^1.8.0"
+  }
+}
