@@ -2,21 +2,19 @@ pragma solidity ^0.4.19;
 
 contract SmartzDeliveryOracle {
 
-    address owner;
-    bool delivered;
+    address customer;
+    bool public delivered;
 
-    function SmartzDeliveryOracle(address _owner) {
-        owner = msg.sender;
-        delivered = false;       
+    function SmartzDeliveryOracle(address _customer) {
+        customer = _customer;
     }
 
-
-    modifier onlyOwner {
-        require(msg.sender == owner);
+    modifier onlyCustomer {
+        require(msg.sender == customer);
         _;
     }
 
-    function set_delivered() onlyOwner public {
+    function setDelivered() onlyCustomer public {
         delivered = true;
     }
 }
