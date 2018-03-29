@@ -1,12 +1,12 @@
 pragma solidity ^0.4.19;
 
-contract SmartzPayments {
+contract SmartzPayment {
 
     address owner;
     uint256 public item_price;
 
     
-    function SmartzPayments(uint256 _start_price) public {
+    function SmartzPayment(uint256 _start_price) public {
         owner = msg.sender;
         item_price = _start_price;
     }
@@ -22,11 +22,12 @@ contract SmartzPayments {
     }
 
     function () public payable {
-        require (msg.value >= item_price);
+        // [WARN] if msg.value >= item_price it can lead to front-run attack from owner
+        require (msg.value == item_price);
 
     }
 
-    function withdraw(uint amount) onlyOwner public returns(bool) {
+    function withdraw_final(uint amount) onlyOwner public returns(bool) {
         require(amount <= address(this).balance);
         owner.transfer(amount);
         return true;
