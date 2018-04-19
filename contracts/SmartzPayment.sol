@@ -2,6 +2,7 @@ pragma solidity ^0.4.19;
 
 import './SmartzDeliveryOracle.sol';
 
+// HELLO GIT 
 contract SmartzPayment {
 
     address owner;
